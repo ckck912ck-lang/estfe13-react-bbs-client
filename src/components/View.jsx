@@ -56,9 +56,11 @@ export default function View({ handleModify }) {
       </div>
     );
   }
+
   const handleClick = () => {
     handleModify(id);
   };
+
   const handleDelete = () => {
     if (window.confirm("정말 삭제할까요")) {
       axios
@@ -74,6 +76,7 @@ export default function View({ handleModify }) {
         .finally(() => {});
     }
   };
+
   return (
     <>
       <h2>{content.title}</h2>

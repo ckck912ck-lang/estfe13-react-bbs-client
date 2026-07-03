@@ -15,11 +15,13 @@ export default function Write({ isModifyMode, boardId, handleCancel }) {
   useEffect(() => {
     if (isModifyMode && boardId) {
       //boardId로 서버에 글 조회, 조회결과로 content 업데이트
+
       axios
         .get(`http://localhost:3000/view?id=${boardId}`)
         .then(response => {
           console.log(response.data); //[{..}]
           //setContent(response.data);
+
           //data가 없거나 data의 배열의 개수가 0가 같다면
           if (!response.data || response.data.length === 0) {
             setIsError(true);
@@ -75,6 +77,7 @@ export default function Write({ isModifyMode, boardId, handleCancel }) {
       })
       .finally(() => {});
   };
+
   const update = e => {
     e.preventDefault();
     const formData = validate(e);

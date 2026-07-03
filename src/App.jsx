@@ -16,10 +16,12 @@ function App() {
     setIsModifyMode(true);
     navigate("/write");
   };
+
   const handleCancel = () => {
     setBoardId(0);
     setIsModifyMode(false);
   };
+
   return (
     <div className="container">
       <h1>React BBS</h1>
